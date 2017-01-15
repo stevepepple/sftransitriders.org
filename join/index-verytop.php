@@ -2,18 +2,18 @@
 <html>
 	<head>
 		<title>SFTRU - Join</title>
-		
-		<?php 
-		echo file_get_contents("http://" . $_SERVER['HTTP_HOST'] . "/header.php?ipad=" . (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad')); 
+
+		<?php
+		echo file_get_contents("http://" . $_SERVER['HTTP_HOST'] . "/header.php?ipad=" . (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad'));
 		?>
-		
+
 		<script language="javascript" type="text/javascript" src="validate.js"></script>
 <script language="javascript" type="text/javascript">
-	
+
 	function showHideMemberships() {
 		var thisform = document.forms[0];
 		var donation_type = thisform.donation_type;
-		
+
 		for (var i = 0; i < donation_type.length; i++) {
 			if (donation_type[i].checked && donation_type[i].value=="Donate") {
 				document.getElementById("memberships").style.display = "none";
@@ -24,14 +24,14 @@
 			}
 		}
 	}
-	
+
 	function continueDonation() {
 		var thisform = document.forms[0];
 		var donation_type = thisform.donation_type;
-		
+
 		var donationURL = "https://sftru.nationbuilder.com/donate/";
 		var membershipBaseURL = "https://sftru.nationbuilder.com/join_";
-		
+
 		for (var i = 0; i < donation_type.length; i++) {
 			if (donation_type[i].checked && donation_type[i].value=="Donate") {
 				// Go to Donation, not Membership
@@ -39,7 +39,7 @@
 				return true;
 			}
 		}
-		
+
 		var membership_type = thisform.membership;
 		for (var i = 0; i < membership_type.length; i++) {
 			if (membership_type[i].checked) {
@@ -47,13 +47,13 @@
 				return true;
 			}
 		}
-		
+
 		// Didn't match anything -- nothing selected?
 		alert("Please select a Membership Level.");
 
-		
+
 	}
-	
+
 function validate() {
 	var bflag = false;
 	var bOth = false;
@@ -103,30 +103,30 @@ function validate() {
 	return false;
 }
 </script>
-		
+
 	</head>
 	<body style="margin: 0;">
-		
+
 		<!-- Nav -->
-		<?php 
-		echo file_get_contents("http://" . $_SERVER['HTTP_HOST'] . "/nav.php?class=top&page=" . basename(getcwd())); 
+		<?php
+		echo file_get_contents("http://" . $_SERVER['HTTP_HOST'] . "/nav.php?class=top&page=" . basename(getcwd()));
 		?>
-		
-		
+
+
 		<div id="content_wrapper_verytop" style="background-color:#fff;">
-			
+
 			<form method="post" action="https://livablecity.org/donate-sftru/review.php" onsubmit="return validate();">
 		    <input type="hidden" name="card_amount" value="">
-			
+
 			<div id="content_wrapper_sub" style="background-color:#fff;">
 				<div class="content_item" style="padding-top:0px;padding-bottom:50px;">
 
 					<h1>Donations &amp; Membership</h1>
-					
+
 						<p>The SF Transit Riders are working to create excellent public transit that attracts a growing number of passengers for a more livable city. <i>We rely on people like you who love San Francisco.</i> Thank you.</p>
-						
+
 						<p class="head"><h2>What type of donation are you making?</h2></p>
-						
+
 						<p class="radio"><input type="radio" name="donation_type" value="Join" onclick="showHideMemberships();" checked="true"> <b>Become a Member</b>
 						<span class="emitalic">Join our community and support better transit.</span></p>
 						<p class="radio"><input type="radio" name="donation_type" value="Renew" onclick="showHideMemberships();"> <b>Renew Membership</b>
@@ -136,12 +136,12 @@ function validate() {
 						<p style="padding-top: 10px;"><a href="/business/">Looking for Business Memberships?</a></p>
 				</div>
 			</div>
-			
+
 			<div id="memberships" style="background-color:#f2f2f2;">
 				<div class="content_item" style="padding-top:20px;padding-bottom:20px;">
-						
+
 					<p class="head"><h2>Select Your Membership Level</h2></p>
-						
+
 					<p class="radio">
 						<input type="radio" name="membership" value="benefactor" id="selAmount">
 						<span class="donation_amount">$1000+</span>
@@ -150,74 +150,74 @@ function validate() {
 							<span class="emitalic">91-Owl: Longest route at 24.1 miles</span>
 						</span></p>
 					<p class="radio">
-						<input type="radio" name="membership" value="patron" id="selAmount"> 
+						<input type="radio" name="membership" value="patron" id="selAmount">
 						<span class="donation_amount">$500 &ndash; $999</span>
 						<span class="donation_desc">
 							<strong>Sunset Patron</strong>
 							<span class="emitalic">29-Sunset: Longest daytime route, 14.5 miles</span>
 						</span></p>
 					<p class="radio">
-						<input type="radio" name="membership" value="sustainer" id="selAmount"> 
+						<input type="radio" name="membership" value="sustainer" id="selAmount">
 						<span class="donation_amount">$200 &ndash; $499</span>
 						<span class="donation_desc">
 							<strong>Oceanview Sustainer</strong>
 							<span class="emitalic">M-Oceanview: Longest streetcar route, 9 miles</span>
 						</span></p>
 					<p class="radio">
-						<input type="radio" name="membership" value="contributor" id="selAmount"> 
+						<input type="radio" name="membership" value="contributor" id="selAmount">
 						<span class="donation_amount">$100 &ndash; $199</span>
 						<span class="donation_desc">
 							<strong>Mission Contributor</strong>
 							<span class="emitalic">14-Mission: Longest trolley bus route, 7.8 miles</span>
 						</span></p>
 					<p class="radio">
-						<input type="radio" name="membership" value="collector" id="selAmount"> 
+						<input type="radio" name="membership" value="collector" id="selAmount">
 						<span class="donation_amount">$50 &ndash; $99</span>
 						<span class="donation_desc">
 							<strong>Cable Car Collector</strong>
 							<span class="emitalic">Powell-Hyde: Longest cable car route, 2.1 miles</span>
 						</span></p>
 					<p class="radio">
-						<input type="radio" name="membership" value="member" id="selAmount"> 
+						<input type="radio" name="membership" value="member" id="selAmount">
 						<span class="donation_amount">$25+</span>
 						<span class="donation_desc">
 							<strong>Standard Membership</strong>
 							<span class="emitalic">&nbsp;</span>
 						</span></span></p>
 					<p class="radio">
-						<input type="radio" name="membership" value="student" id="selAmount"> 
-						<span class="donation_amount">$10+</span>
+						<input type="radio" name="membership" value="student" id="selAmount">
+						<span class="donation_amount">$5+</span>
 						<span class="donation_desc">
-							<strong>Student Membership</strong>
+							<strong>Student &amp; Low Income</strong>
 							<span class="emitalic">&nbsp;</span>
 						</span></span></p>
 
 				</div>
 			</div>
-			
-			
+
+
 			<div id="content_wrapper_sub" style="background-color:#fff;">
 				<div class="content_item" style="padding-top:20px;padding-bottom:50px;">
-					
+
 <p class="head"><input type="button" value="Continue to Donate &raquo;" class="but_default" onClick="continueDonation();"></p>
 
 <p>&nbsp;</p>
-						
+
 						<p style="opacity:0.5;"><i>San Franciscans have consistently supported transit, and they deserve a reliable, robust, and 21st-century transit system. SFTRU's past accomplishments and future action plan are together delivering that change. By becoming a member, you'll join our community and support our work. We thank you!</i></p>
-							
+
 				</div>
 			</div>
 			</form>
-			
-			
-		
+
+
+
 			<!-- Footer -->
-		<?php 
-		echo file_get_contents("http://" . $_SERVER['HTTP_HOST'] . "/footer.php"); 
+		<?php
+		echo file_get_contents("http://" . $_SERVER['HTTP_HOST'] . "/footer.php");
 		?>
 
 		</div>
 
-		
+
 	</body>
 </html>

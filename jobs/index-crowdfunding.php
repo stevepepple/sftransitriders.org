@@ -211,7 +211,7 @@ echo $days_remaining;
 						<input type="radio" name="membership" value="student" id="selAmount">
 						<span class="donation_amount">$5+</span>
 						<span class="donation_desc">
-							<strong>Student Membership</strong>
+							<strong>Student &amp; Low Income</strong>
 							<span class="emitalic">&nbsp;</span>
 						</span></span></p>
 
