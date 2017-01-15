@@ -1,0 +1,1 @@
+<?php header('Location: http://sftru.nationbuilder.com/business_membership/'); ?>

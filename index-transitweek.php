@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>SFTRU - San Francisco Transit Riders</title>
+		
+		<?php 
+		echo file_get_contents("http://" . $_SERVER['HTTP_HOST'] . "/header.php?ipad=" . (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad')); 
+		?>
+		<meta name="google-site-verification" content="AKdSILM5XTCzv2u-5zCZS6moH-Gw4Ca_ZplAqmZVfC0" />
+		<script src="jquery.min.js" type="text/javascript"></script>
+		<script src="date.js" type="text/javascript"></script>
+		<script src="GCalEvents.js" type="text/javascript"></script>
+		
+		<script src="index.js" type="text/javascript"></script>
+		<style>
+			#content_wrapper_sub:before {
+				background-color:#78637F;
+			}
+
+    		@media only screen and (max-device-width: 480px) {
+
+			.headcol_small_l,
+			.headcol_small_r {
+				width: 100% !important;
+				padding-top: 10px;
+			}	
+
+			.headcol_mid {
+				width: 100% !important;
+			}
+		}
+
+		</style>
+
+	</head>
+	<body style="margin: 0;">
+	
+		<div id="bgphoto" style="background-image:url('img/blurPhoto1.png');"></div>
+		<div id="bgphoto2" style="background-image:url('img/blurPhoto2.png');"></div>
+		<div id="bgphotoOverlay"></div>
+		<div id="logowrap">
+			<div id="logo_s"></div>
+			<div id="logo"></div>
+		</div>
+		<div id="photo_overlay" class="short">
+		</div>
+		
+		<!-- Nav -->
+		<?php 
+		echo file_get_contents("http://" . $_SERVER['HTTP_HOST'] . "/nav.php?class=short&page="); 
+		?>
+		
+		
+		<div id="content_wrapper_short" style="z-index:999; background-color:#3C2B42;">
+		
+
+			<div id="content_wrapper_sub" style="background-color:#78637F; background: linear-gradient(rgba(127, 66, 16, 0.70), rgba(120, 99, 127, 0.80)), url('transitweek/people-on-muni.png'); height: 440px;">
+
+				<div class="head">
+					<div class="headcol_small_l" style="width: 39%; font-size: 4.5vw; line-height: 4vw; color: #FFF; padding-top:140px; margin:0px;">
+						Transit Week
+						<br/><span style="font-size: 2.4vw; color: #EDE8A9">More smiles <span style="color: #FFF100;">#onboardSF<span></div>
+					<div class="headcol_mid" style="text-align:center; width: 226px"><img src="/img/logo_transit_week.png" width=210></div>
+					<div class="headcol_small_r" style="width: 34%; font-size: 4.3vw; line-height: 4vw; margin-top: 20px; color: #FFF;">
+						September 12-17
+						</br><span style="font-size: 2.4vw; line-height: 1.8em; color: #EDE8A9">Join the voice of <span style="color: #FFF100;">transit riders<span></span></div>
+					</div>
+					<br/>
+
+					<h3 style="text-align:center; margin-top:20px;">
+					<a href="/transitweek/" class="bigbut" style="font-size:6jvw;">Get #OnBoardSF!</a></h3>
+
+					<!--div class="content_item" style="padding-top:50px;padding-bottom:50px;text-align:center;">
+										<h2 style="margin-bottom:50px;">We did it! You helped us raise 109% of our crowdfunding goal!</h2>
+										<img src="/img/crowdcampaign.png" width=990 height=342>
+										<p>&nbsp;</p>
+										<h3>With your support we surpassed our goal! Thank you for being a part of making transit in SF a priority. If you didn't get a chance to donate to our campaign, but were intending to, please donate now by clicking below and making a direct, one time donation.</h3>
+										
+										<h3><a href="/join/" class="bigbut">Donate Today!</a></h3>
+					</div-->
+			</div>
+			
+			<!-- https://www.googleapis.com/calendar/v3/calendars/n8ir7ib1r7f6st2pi82c72ugp8%40group.calendar.google.com/events?key=AIzaSyCM1uVx8co2ScVW7LbMMh_ZswUa_aMrs7k&timeMin=2015-01-17T02:08:00-06:00&orderBy=startTime&singleEvents=true -->
+			
+			<div id="content_wrapper_sub" style="background-color:#fff;">
+				<div class="content_item" style="padding-top:50px;padding-bottom:50px;">
+					<h1>Get Involved</h1>
+					<br><br>
+					
+					<div class="col" style="margin-right: 120px;">
+						<h2>Join our Transit Action Committee</h2>
+						<p>Do you have an idea to make Muni better? Want to get involved with a campaign? Attend the monthly Transit Action Committee meeting! At these informal meetings, we plan our campaigns and forums and discuss ideas for improving Muni. Everyone is welcome, even if you're not a member.</p>
+						<p><a href="" id="nextTAC">Upcoming TAC Meetings &raquo;</a></p>
+					</div>
+					
+					<div class="col" style="margin: 0;">
+						<h2>Attend a Forum or Event</h2>
+						<p>Want to learn more about SFTRU? Or perhaps you're fascinated by transit in San Francisco, whether the history or the future. Or maybe you'd enjoy having discussions with other similar transit riders about Muni? Check out one of our periodic forums and events.</p>
+						<p><a href="#upcomingEvents">Upcoming Forums and Events &raquo;</a></p>
+					</div>
+					
+					<div id="manyways"><h3>There are many ways to get involved.<a name="upcomingEvents"> </a><a href="/involved/">Learn More</a> about opportunities with SFTRU.</h3></div>
+				</div>
+			</div>
+
+			<div id="content_wrapper_sub" style="background-color:#f2f2f2;">
+				<div class="content_item" style="padding-top:50px;padding-bottom:50px;">
+										<h1 style="margin-bottom:50px;">Upcoming Events</h1>
+					<div id="gcal-events"><h3><i>No Upcoming Events</i></h3></div>
+					<div id="fullcal"><h3><a href="https://www.google.com/calendar/embed?src=n8ir7ib1r7f6st2pi82c72ugp8%40group.calendar.google.com&ctz=America/Los_Angeles&mode=AGENDA">See Full Events Calendar &raquo;</a></h3>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			<div id="content_wrapper_sub" style="background-color:#2c353c;background-image:url('img/honeycomb_bg.png');background-repeat: repeat-x repeat-y;">
+				<div class="content_item" style="padding-top:50px;padding-bottom:50px;">
+					<div class="centerquote">
+						<p>Building on our past <a href="">accomplishments and victories</a>, we have an <a href="">aggressive action plan</a> for 2016.</p>
+
+						<p>We hope to have your knowledge, time, and<br>experience to help implement it.</p>
+						
+						<p><a href="/work/" class="orange">LEARN MORE &raquo;</a></p>
+					</div>
+				</div>
+			</div>
+			
+			<div id="content_wrapper_sub" style="background-color:#f2f2f2;">
+				<div class="content_item" style="padding-top:50px;padding-bottom:50px;">
+					
+					<h1 style="margin-bottom:50px;">Blog</h1>
+					<script async src="/js/medium.js"></script>
+			
+					<div style="vertical-align: middle;overflow-y: hidden;overflow-x: scroll;white-space:nowrap;height:470px;">
+						
+					<?php
+						
+						$json = file_get_contents( "http://sftransitriders.org/medium.php" );
+						$blog = json_decode( $json, true );
+						$maxcount = 5;
+						$count = 0;
+						
+						foreach($blog["payload"]["references"]["Post"] as &$post) {
+							$count++;
+							
+							if($count > $maxcount) {
+								break;
+							}
+							
+							echo "<a class='m-story' data-collapsed='true' href='https://medium.com/@SFTRU/" . $post["uniqueSlug"] . "'>" . $post["title"] . "</a>";
+						}
+								
+					?>
+						<a class='m-profile' data-collapsed='true' href='https://medium.com/@SFTRU/'>SFTRU</a>
+					</div>
+				</div>
+			</div>
+
+
+			<div id="content_wrapper_sub" style="background-color:#fff;">
+				<div class="content_item" style="padding-top:50px;padding-bottom:50px;">
+										<h1 style="margin-bottom:50px;">News</h1>
+					<div id="twitterfeed">
+						<div class='tweet'><div class='tweetimg'></div><div class='tweetxt'></div></div>
+						<div class='tweet'><div class='tweetimg'></div><div class='tweetxt'></div></div>
+						<div class='tweet'><div class='tweetimg'></div><div class='tweetxt'></div></div>
+						<div class='tweet'><div class='tweetimg'></div><div class='tweetxt'></div></div>
+						<div class='tweet'><div class='tweetimg'></div><div class='tweetxt'></div></div>
+						<div class='tweet'><div class='tweetimg'></div><div class='tweetxt'></div></div>
+						<div class='tweet'><div class='tweetimg'></div><div class='tweetxt'></div></div>
+						<div class='tweet'><div class='tweetimg'></div><div class='tweetxt'></div></div>
+						<div class='tweet'><div class='tweetimg'></div><div class='tweetxt'></div></div>
+						<div class='tweet'><div class='tweetimg'></div><div class='tweetxt'></div></div>
+					</div>
+					<script src="twitter.js" type="text/javascript"></script>
+				</div>
+			</div>
+			
+			
+		<!-- Footer -->
+		<?php 
+		echo file_get_contents("http://" . $_SERVER['HTTP_HOST'] . "/footer.php?dir=1"); 
+		?>
+			
+			
+		</div>
+
+		
+	</body>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-83816638-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+	<script type="text/javascript">
+		window.onscroll = blurPhoto;
+		
+		var currentdate = new Date();
+		var enddate = new Date();
+		// enddate.setHours(enddate.getHours()+1488); // 2 Months
+		enddate.setHours(enddate.getHours()+2976); // 4 Months
+		
+		var dateString = currentdate.toISOString(); //("h:mm tt : dddd MMMM d");
+		var endDateString = enddate.toISOString(); //("h:mm tt : dddd MMMM d");
+		
+		var calendar_json_url = "https://www.googleapis.com/calendar/v3/calendars/n8ir7ib1r7f6st2pi82c72ugp8%40group.calendar.google.com/events?key=AIzaSyCM1uVx8co2ScVW7LbMMh_ZswUa_aMrs7k&timeMin="+dateString+"&orderBy=startTime&singleEvents=true&maxResults=5&timeMax="+endDateString
+		$(document).ready(GCalEvents(calendar_json_url));
+	</script>
+	</script>
+</html>

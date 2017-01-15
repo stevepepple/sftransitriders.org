@@ -1,0 +1,233 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US" prefix="og: http://ogp.me/ns#">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Livable City -</title>
+<link rel="Shortcut Icon" href="https://livablecity.org/wp-content/themes/magazine/images/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="canonical" href="https://livablecity.org/" />
+<meta property='og:locale' content='en_US'/>
+<meta property='og:type' content='website'/>
+<meta property='og:title' content='Livable City - '/>
+<meta property='og:url' content='https://livablecity.org/'/>
+<meta property='og:site_name' content='Livable City'/>
+
+<link rel="alternate" type="application/rss+xml" title="Livable City &raquo; Feed" href="https://livablecity.org/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Livable City &raquo; Comments Feed" href="https://livablecity.org/comments/feed/" />
+<link rel='stylesheet' id='magazine-theme-css'  href='https://livablecity.org/wp-content/themes/magazine/style.css?ver=1.9.2' type='text/css' media='all' />
+</style><style type="text/css">#header { background: url(https://livablecity.org/wp-content/uploads/2013/04/LC_Header.jpg) no-repeat; }</style></head>
+
+<script language="javascript" type="text/javascript" src="validate.js"></script>
+<script language="javascript" type="text/javascript">
+function validate() {
+	var bflag = false;
+	var bOth = false;
+	var thisform = document.forms[0];
+	var chkGroup = thisform.amount;
+	for (var i = 0; i < chkGroup.length; i++) {
+		if (chkGroup[i].checked) {
+			bflag = true;
+			if (chkGroup[i].value=="other") {
+				bOth = true;
+				thisform.card_amount.value=thisform.othAmount.value;
+			} else {
+				thisform.card_amount.value=chkGroup[i].value;
+			}
+		}
+	}
+	if (!bflag)
+		alert('Please select an amount to give.');
+	else if (bOth && !isValidNum(thisform.othAmount.value))
+		alert('Please enter the amount you wish to give.');
+	else if (thisform.card_fname.value=="")
+		alert('Please enter the billing first name.');
+	else if (thisform.card_lname.value=="")
+		alert('Please enter the billing last name.');
+	else if (thisform.card_address1.value=="")
+		alert('Please enter the billing street address.');
+	else if (thisform.card_city.value=="")
+		alert('Please enter the billing city.');
+	else if (thisform.card_state.value=="")
+		alert('Please enter the billing state.');
+	else if (thisform.card_zip.value=="")
+		alert('Please enter the billing zip code.');
+/* 	else if (thisform.card_country.value=="") */
+/* 		alert('Please enter the billing country.'); */
+	else if (thisform.card_phone.value=="")
+		alert('Please enter the billing telephone number.');
+	else if (!(emailCheck(thisform.card_email.value)))
+		alert('Please enter a valid email address.');
+	else if (!CheckCardNumber(thisform))
+		return false;
+	else {
+		if (bOth) {
+			thisform.card_amount.value=thisform.othAmount.value;
+		}
+		return true;
+	}
+	return false;
+}
+</script>
+
+<body class="header-image full-width-content">
+
+<div id="nav"><div class="wrap"><ul id="menu-top-navigation" class="menu genesis-nav-menu menu-primary superfish"><li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="https://livablecity.org/sample-page/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-133" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133"><a href="https://livablecity.org/staff-interns/">Staff &#038; Interns</a></li>
+	<li id="menu-item-134" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-134"><a href="https://livablecity.org/board-of-directors/">Board of Directors</a></li>
+	<li id="menu-item-135" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-135"><a href="https://livablecity.org/advisory-board/">Advisory Board</a></li>
+	<li id="menu-item-137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-137"><a href="https://livablecity.org/missiongoals/">Mission/Goals</a></li>
+</ul>
+</li>
+<li id="menu-item-52" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a href="https://livablecity.org/campaigns/">Campaigns</a>
+<ul class="sub-menu">
+	<li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="https://livablecity.org/livable-neighborhoods/">Livable neighborhoods</a>
+	<ul class="sub-menu">
+		<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="https://livablecity.org/livable-neighborhoods/the-livable-downtown-initiative/">Livable Downtown</a></li>
+		<li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="https://livablecity.org/livable-neighborhoods/parking-reform-for-a-livable-city/">Parking Reform</a></li>
+	</ul>
+</li>
+	<li id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55"><a href="https://livablecity.org/campaigns/complete-streets/">Complete Streets</a></li>
+	<li id="menu-item-54" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54"><a href="https://livablecity.org/campaigns/great-transit-for-a-livable-city/">Great Transit</a></li>
+	<li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="https://livablecity.org/campaigns/livable-citys-greenway-initiative/">Livable City&#8217;s Greenway Initiative</a></li>
+	<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="https://livablecity.org/car-free-living/">Car-free Living</a></li>
+</ul>
+</li>
+<li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="https://livablecity.org/donate/">Join</a></li>
+<li id="menu-item-46" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46"><a href="https://livablecity.org/resources/">Resources</a></li>
+<li id="menu-item-45" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45"><a href="https://livablecity.org/contact-us/">Contact Us</a></li>
+</ul></div><!-- end .wrap --></div><div id="wrap">
+
+<div id="header"><div class="wrap"><div id="title-area"><h1 id="title"><a href="https://livablecity.org/" title="Livable City">Livable City</a></h1></div><!-- end #title-area --><div class="widget-area"><div id="text-6" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><div id="sitelock_shield_logo" class="fixed_btm" style="bottom:0;position:fixed;_position:absolute;right:0;"><a href="https://www.sitelock.com/verify.php?site=livablecity.org" onclick="window.open('https://www.sitelock.com/verify.php?site=livablecity.org','SiteLock','width=600,height=600,left=160,top=170');return false;" ><img alt="malware removal and website security" title="SiteLock"  src="//shield.sitelock.com/shield/livablecity.org"/></a></div></div>
+		</div></div>
+</div><!-- end .widget-area --></div><!-- end .wrap --></div>
+
+<div id="inner">
+	<div class="wrap">
+		<div id="content-sidebar-wrap">
+			<div id="content" class="hfeed">
+
+
+
+		<form method="post" action="https://livablecity.org/donate-sftru/review.php" onsubmit="return validate();">
+		<input type="hidden" name="card_amount" value="">
+		<h1>Donate to the San Francisco Transit Riders Union</h1>
+		
+		<p>
+		<b>The SF Transit Riders Union is working to create excellent public transit that attracts a growing number of passengers for a more livable city.</b> We rely on people like you who love San Francisco. Thank you.
+		<p>I would like to <input type="radio" name="donation_type" value="Donate"> Donate <input type="radio" name="donation_type" value="Join"> Join <input type="radio" name="donation_type" value="Renew"> Renew</p>
+<p>
+<input type="radio" name="amount" value="1000" id="selAmount"> <strong>$1000 Owl Benefactor</strong> <em>91-Owl: Longest route at 24.1 miles one-way</em><br>
+<input type="radio" name="amount" value="500" id="selAmount"> <strong>$500 Sunset Patron</strong> <em>29-Sunset: Longest daytime route, 14.5 miles one way</em><br>
+<input type="radio" name="amount" value="200" id="selAmount"> <strong>$200 Oceanview Contributor</strong> <em>M-Oceanview: Longest streetcar route, 9.0 miles one way</em><br>
+<input type="radio" name="amount" value="100" id="selAmount"> <strong>$100 Mission Sustainer</strong> <em>14-Mission: Longest trolley bus route, 7.8 miles one way</em><br>
+<input type="radio" name="amount" value="75" id="selAmount"> <strong>$75 Cable Car Collector</strong> <em>Powell-Hyde: Longest cable car route, 2.1 miles one way</em><br>
+<input type="radio" name="amount" value="25" id="selAmount"> <strong>$25 Annual Membership</strong><br>
+<input type="radio" name="amount" value="other" id="selAmount"> <strong>Other amount:</strong> $<input type="text" name="othAmount" size="6" id="othAmount" maxlength="8" onfocus="document.forms[0].amount[6].checked=true";">
+</p>
+<p>
+Your tax deductible donation will be processed securely through our credit card processor. Your credit card bill will indicate Livable City, our fiscal sponsor, as the recipient. Our site uses SSL encryption and your credit card information is not stored on our server.
+</p>
+<p><b>Billing Information</b><p>
+<table border="0" cellspacing="0" cellpadding="2">
+	<tr>
+		<td>First Name:</td>
+		<td><input type="text" name="card_fname" id="FirstName" value="" size="20"></td>
+	</tr>
+	<tr>
+		<td>Last Name:</td>
+		<td><input type="text" name="card_lname" id="LastName" value="" size="20"></td>
+	</tr>
+	<tr>
+		<td>Company:</td>
+		<td><input type="text" name="company" id="Company" value="" size="20"></td>
+	</tr>
+	<tr>
+		<td valign="top">Address:</td>
+		<td>
+			Line 1:<br><input type="text" name="card_address1" id="BillingAddressLine1" value="" size="20"><br>
+			Line 2:<br><input type="text" name="card_address2" id="BillingAddressLine2" value="" size="20">
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td>City:<br><input type="text" name="card_city" id="BillingAddressCity" value="" size="15" maxlength="50"><br></td>
+					<td>State:<br><input type="text" name="card_state" id="BillingAddressState" value="" size="3" maxlength="2"><br></td>
+					<td>Zip:<br><input type="text" name="card_zip" id="BillingAddressZip" value="" size="5" maxlength="6"><br></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>Telephone:</td>
+		<td><input type="text" name="card_phone" id="card_phone" value="" size="20" maxlength="30"></td>
+	</tr>
+	<tr>
+		<td>Email:</td>
+		<td><input type="text" name="card_email" id="Email" value="" size="20">
+	</tr>
+	<tr valign="top">
+		<td>Comments:<br>(including transit lines I ride):</td>
+		<td><textarea name="comments" rows="6" columns="40"></textarea>
+	</tr>
+</table>
+<p><b>Payment Information</b><p>
+<table border="0" cellspacing="0" cellpadding="2">
+	<tr>
+		<td>Payment Type:</td>
+		<td>
+<select name="card_type" id="PaymentType">
+<option value="visa">Visa</option>
+<option value="mc">Mastercard</option>
+</select>
+		</td>
+		<td rowspan="3">&nbsp;&nbsp;</td>
+		<td rowspan="3" valign="top"><img src="/donate/quickssl_static.gif" border="0" width="115" height="55"></td>
+	</tr>
+	<tr>
+		<td>Credit Card Number:</td>
+		<td><input type="text" name="card_number" id="CreditCardNumber" value="" size="20" maxlength="20"></td>
+	</tr>
+	<tr>
+		<td>Expiration Month/Year:</td>
+		<td>
+<select name = "card_expmonth" id="CardExpMonth">
+<option value = "">&lt;Select One&gt;</option>
+<option value = "01">1-January</option>
+<option value = "02">2-February</option>
+<option value = "03">3-March</option>
+<option value = "04">4-April</option>
+<option value = "05">5-May</option>
+<option value = "06">6-June</option>
+<option value = "07">7-July</option>
+<option value = "08">8-August</option>
+<option value = "09">9-September</option>
+<option value = "10">10-October</option>
+<option value = "11">11-November</option>
+<option value = "12">12-December</option>
+</select>
+/
+<select name = "card_expyear" id="CardExpYear">
+<option value = "">&lt;Select One&gt;</option>
+<option value = "12">2012</option>
+<option value = "13">2013</option>
+<option value = "14">2014</option>
+<option value = "15">2015</option>
+<option value = "16">2016</option>
+<option value = "17">2017</option>
+<option value = "18">2018</option>
+<option value = "19">2019</option>
+<option value = "20">2020</option>
+</select>
+		</td>
+	</tr>
+</table>
+<br>
+<input type="submit" value="Review Details">
+</form>
+</div><!-- #content -->
+</div><!-- #content-sidebar-wrap -->
+</div><!-- #wrap -->
+</div><!-- #inner -->
+
+</body>
+</html>
